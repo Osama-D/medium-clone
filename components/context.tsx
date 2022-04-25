@@ -110,7 +110,7 @@ export function Context({ children }) {
       );
       setsuccesslogin(true);
 
-      // router.reload();
+      router.reload();
     } catch (error) {
       if (
         error.code === "auth/invalid-email" ||
