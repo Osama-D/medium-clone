@@ -128,6 +128,7 @@ function Post({ post, posts }: Props) {
   });
 
   // coppy url
+  // console.log(post.author.bio);
 
   const [up, setup] = useState(false);
   const [popup, setPopup] = React.useState(false);
@@ -1064,11 +1065,13 @@ function Post({ post, posts }: Props) {
                 </div>
               </div>
             </div>
-            <div className="py-4 pr-0 mb-8 sm:pr-44">
+            <div className="py-4 pr-0 mb-8 text-sm sm:pr-44">
               {" "}
-              <h2 className="text-gray-500 text-sm">
-                {post.author.bio[0].children[0].text}
-              </h2>
+              <BlockContent
+                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+                blocks={post.author.bio}
+              />
             </div>
             <div className="w-full">
               {/* post */}
@@ -1084,7 +1087,11 @@ function Post({ post, posts }: Props) {
                       </p>
                     </div>
                     <div className="sm:line-clamp-3 line-clamp-2 text-[13px] sm:text-[15px] text-gray-900">
-                      {post.body[0].children[0].text}
+                      <BlockContent
+                        dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+                        projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+                        blocks={post.body.slice(0, 2)}
+                      />
                     </div>
                   </div>
                   <img
@@ -1137,7 +1144,21 @@ function Post({ post, posts }: Props) {
                           </p>
                         </div>
                         <div className="sm:line-clamp-3 line-clamp-2 text-[13px] sm:text-[15px] text-gray-900">
-                          {post.body[0].children[0].text}
+                          {" "}
+                          <BlockContent
+                            blocks={post.body.slice(0, 2)}
+                            className="capitalize text-[16px]"
+                            dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+                            projectId={
+                              process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!
+                            }
+                            content={post.body.slice(0, 2) || []}
+                            serializers={{
+                              types: {
+                                code: CodeRenderer,
+                              },
+                            }}
+                          />
                         </div>
                       </div>
                       <img
@@ -1260,7 +1281,12 @@ function Post({ post, posts }: Props) {
                 {post.author.name}
               </h1>
               <h2 className="text-gray-500 text-sm">
-                {post.author.bio[0].children[0].text}
+                <BlockContent
+                  className=""
+                  dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+                  projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+                  blocks={post.author.bio}
+                />
               </h2>
               <div className="py-4 flex items-center space-x-4">
                 <button

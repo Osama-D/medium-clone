@@ -1,14 +1,9 @@
 export interface Post {
+  filter(arg0: (person: any) => any);
   _id: string;
   _createdAt: string;
   title: string;
-  children:
-    | ReactChild
-    | string
-    | object
-    | ReactChild[]
-    | ReactChildren
-    | ReactChildren[];
+
   author: {
     name: string;
     image: string;
