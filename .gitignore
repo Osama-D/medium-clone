@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-
+sanitybuild/node_modules
 # testing
 /coverage
 
@@ -30,3 +30,4 @@ yarn-error.log*
 
 # vercel
 .vercel
+.env

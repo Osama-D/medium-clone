@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
 html,
 body {
   padding: 0;
@@ -14,3 +16,36 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.hidescrollbar ::-webkit-scrollbar {
+  @apply hidden;
+}
+.li li {
+  @apply ml-10 py-4 list-disc;
+}
+.link a {
+  @apply underline;
+}
+.imagepaddingstyle img {
+  @apply my-[2em];
+}
+.yellowbackground {
+  background-color: #facc15;
+
+  border-block: 1px solid black;
+  border-color: black;
+  z-index: 1;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: 100vw;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+}
+.wrapper {
+  @apply max-w-7xl mx-auto;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
