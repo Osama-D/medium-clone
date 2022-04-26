@@ -69,7 +69,7 @@ export default function Home({ posts }: Props) {
       <div className="w-full   z-50 block sm:hidden px-[30px] py-[20px] fixed bg-gray-100 shadow-md bottom-0">
         <div className="flex justify-between">
           <Link href="/">
-            <div>{router.pathname === "/" ? <HomePhone /> : <HomePhone />}</div>
+            <div>{router.pathname === "/" ? <Homee /> : <HomePhone />}</div>
           </Link>
           {/* <Home /> */}
           <Link href="/SearchCo">
