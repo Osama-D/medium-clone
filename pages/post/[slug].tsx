@@ -1224,9 +1224,9 @@ function Post({ post, posts }: Props) {
             {searchTerm !== "" && (
               <div
                 className={`${
-                  searchTerm
+                  user
                     ? "bg-gray-100 w-[330px] top-[95px]  absolute p-4 space-y-2 rounded-md shadow-lg backdrop-blur-xl"
-                    : "bg-gray-100 w-[330px]  top-[95px]  absolute p-4 space-y-2 rounded-md shadow-lg backdrop-blur-xl"
+                    : "bg-gray-100 w-[330px]  top-[200px]  absolute p-4 space-y-2 rounded-md shadow-lg backdrop-blur-xl"
                 }`}
               >
                 <h2 className="mt-4">From Medium</h2>
