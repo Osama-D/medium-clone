@@ -1,34 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+ <h1 align="left"> Ecommerce website built with React & Tailwindcss
+</h1>
 
-## Getting Started
+![osama](https://user-images.githubusercontent.com/99812352/162842962-aba82206-7ae8-4f96-a740-05e57247bd03.PNG)
 
-First, run the development server:
+<h1 align="left">#Basic Overview - <a href="https://ecommerce-website-delta.vercel.app">Live Demo</a>
+ </h1>
+<p align="left">fully functional Ecommerce website built with React & Tailwindcss and also by using Firebase v9, Commercejs, Stripe, React hooks, react Context... All used to build a friendly user experience with instant visual updates and scaleable code in ecommerce applications.
+</p>
+ <h1 align="left"> Features</h1>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<li>Add and remove products from the floating cart using Context Api
+</li>
+<li>Filter products by available sizes using Context Api
+</li>
+<li>Responsive design
