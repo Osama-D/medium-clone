@@ -197,7 +197,7 @@ function Homee() {
 function Readinglist() {
   return (
     <svg
-      className="cursor-pointer text-gray-800 hover:text-black duration-100"
+      className="cursor-not-allowed text-gray-800 hover:text-black duration-100"
       width="25"
       height="24"
       viewBox="0 0 25 25"
