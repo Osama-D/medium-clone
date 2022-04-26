@@ -389,18 +389,18 @@ function Post({ post, posts }: Props) {
               </div>
               <div
                 onClick={() => setusersetting(false)}
-                className={usersetting ? "fixed  inset-0 z-50" : ""}
+                className={usersetting ? "fixed  inset-0 z-[1000000]" : ""}
               ></div>
               <div
                 className={`${
                   usersetting
-                    ? "bg-gray-200  -translate-x-[0%]  opacity-100 duration-300 ease-in-out z-30  bottom-20 left-0  w-[20rem] sm:w-[25rem] px-10 py-8 rounded-lg shadow-lg absolute "
-                    : "bg-gray-200  -translate-x-[200%] opacity-0 duration-300 ease-in-out z-30  bottom-20 left-0  w-[20rem] sm:w-[25rem] px-10 py-8 rounded-lg shadow-lg absolute "
+                    ? "bg-gray-200  -translate-x-[0%] z-[1000000]  opacity-100 duration-300 ease-in-out   bottom-20 left-0  w-[20rem] sm:w-[25rem] px-10 py-8 rounded-lg shadow-lg absolute "
+                    : "bg-gray-200  -translate-x-[200%] z-[1000000] opacity-0 duration-300 ease-in-out   bottom-20 left-0  w-[20rem] sm:w-[25rem] px-10 py-8 rounded-lg shadow-lg absolute "
                 }`}
               >
                 <h2
                   onClick={logout}
-                  className="text-gray-800 hover:text-black duration-75 text-md cursor-pointer"
+                  className="text-gray-800 z-50 hover:text-black duration-75 text-md cursor-pointer"
                 >
                   Sign out
                 </h2>
@@ -641,7 +641,9 @@ function Post({ post, posts }: Props) {
                     <div className="flex cursor-not-allowed items-center space-x-2 cursor-pointer">
                       <Like />
 
-                      <span className="text-sm  opacity-60">{likefield}</span>
+                      <span className="text-sm  text-gray-500">
+                        {likefield}
+                      </span>
                     </div>
                   </Tooltip>
                 </div>
@@ -661,7 +663,7 @@ function Post({ post, posts }: Props) {
                       className="flex space-x-2 items-center cursor-pointer"
                     >
                       <Comment />
-                      <span className="text-sm opacity-60">
+                      <span className="text-sm text-gray-500">
                         {post.comments.length}
                       </span>
                     </div>
@@ -886,7 +888,7 @@ function Post({ post, posts }: Props) {
                         </p>
                         <div className=" cursor-not-allowed items-center flex space-x-2">
                           <Like />
-                          <span className="text-sm opacity-60">
+                          <span className="text-sm text-gray-500">
                             {likefield}
                           </span>
                         </div>
@@ -922,7 +924,7 @@ function Post({ post, posts }: Props) {
                   <div className="flex cursor-not-allowed space-x-2 cursor-pointer">
                     <Like />
 
-                    <span className="text-sm opacity-60">{likefield}</span>
+                    <span className="text-sm text-gray-500">{likefield}</span>
                   </div>
                 </Tooltip>
               </div>
@@ -942,7 +944,7 @@ function Post({ post, posts }: Props) {
                     className="flex space-x-2 cursor-pointer"
                   >
                     <Comment />
-                    <span className="text-sm opacity-60">
+                    <span className="text-sm text-gray-500">
                       {post.comments.length}
                     </span>
                   </div>
@@ -979,19 +981,19 @@ function Post({ post, posts }: Props) {
                 </h2>
               </div>
             ) : (
-              <div>
+              <div className="z-0">
                 <h1 className="text-2xl font-bold">
                   Get an email whenever {post.author.name} publishes.
                 </h1>
                 <form
                   onSubmit={submit}
-                  className="pt-6 space-y-4 w-full z-0 relative sm:space-x-4  justify-between flex flex-col sm:flex-row items-center"
+                  className="pt-6 space-y-4 w-full   sm:space-x-4  justify-between flex flex-col sm:flex-row items-center"
                 >
                   <div
                     className={`${
                       emailErr
-                        ? "relative w-[100%]  sm:w-[67%]  animate-[wave_0.8s_ease-in-out_1]"
-                        : "relative w-[100%]   sm:w-[67%]"
+                        ? " w-[100%]  sm:w-[67%]  animate-[wave_0.8s_ease-in-out_1]"
+                        : " w-[100%]   sm:w-[67%]"
                     }`}
                   >
                     <input
@@ -1002,8 +1004,8 @@ function Post({ post, posts }: Props) {
                       type="text"
                       className={`${
                         emailErr
-                          ? "block   w-full py-2.5 px-0 text-sm text-gray-600 bg-transparent border-0 border-b-[1px]  appearance-none  dark:border-red-600 dark:focus:border-primary-100 focus:outline-none focus:ring-0 focus:border-red-600  peer"
-                          : "block w-full py-2.5 px-0 text-sm text-gray-600 bg-transparent border-0 border-b-[1px]  appearance-none  dark:border-gray-400 dark:focus:border-primary-100 focus:outline-none focus:ring-0 focus:border-green-600  peer"
+                          ? "block z-0   w-full py-2.5 px-0 text-sm text-gray-600 bg-transparent border-0 border-b-[1px]  appearance-none  dark:border-red-600 dark:focus:border-primary-100 focus:outline-none focus:ring-0 focus:border-red-600  peer"
+                          : "block z-0 w-full py-2.5 px-0 text-sm text-gray-600 bg-transparent border-0 border-b-[1px]  appearance-none  dark:border-gray-400 dark:focus:border-primary-100 focus:outline-none focus:ring-0 focus:border-green-600  peer"
                       }`}
                       placeholder="Your Email"
                       required
@@ -2127,8 +2129,9 @@ function CommentSent() {
 function Comment() {
   return (
     <svg
-      className="opacity-60"
+      className=""
       width="24"
+      fill="gray"
       height="24"
       viewBox="0 0 24 24"
       aria-label="responses"
@@ -2140,7 +2143,7 @@ function Comment() {
 function Like() {
   return (
     <svg
-      className="opacity-60"
+      fill="gray"
       width="24"
       height="24"
       viewBox="0 0 24 24"
